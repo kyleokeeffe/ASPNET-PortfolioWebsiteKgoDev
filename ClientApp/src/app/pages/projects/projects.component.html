@@ -1,0 +1,24 @@
+<div class="container w-100">
+    <!-- Card deck for project samples -->
+    <label for="slctType">Project Type</label>"
+    <select x:Name="slctType" [(ngModel)]="selectedType" (change)="updateTypeSelect($event)">
+        <option *ngFor="let item of selectTypeOptions" [value]="item">
+            {{item}}
+        </option>
+
+    </select>
+    <label for="slctLang">Language</label>
+    <select x:Name="slctLang" [(ngModel)]="selectedLang" (change)="updateLangSelect($event)">
+        <option *ngFor="let item of selectLangOptions" [value]="item">
+            {{item}}
+        </option>
+    </select>
+
+    <div class="card-deck w-100 d-flex flex-wrap align-content-around justify-content-center">
+        <app-project-item class="card" *ngFor="let projectItem of projectsFiltered" [projectItem]="projectItem">
+
+        </app-project-item>
+    </div>
+    <div>
+    </div>
+</div>

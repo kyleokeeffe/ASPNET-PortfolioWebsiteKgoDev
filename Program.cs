@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace PortfolioWebsiteKgoDev
@@ -45,11 +46,11 @@ namespace PortfolioWebsiteKgoDev
 
             app.MapFallbackToFile("index.html");
 
-            app.MapGet("/Project", (ProjectDbContext context) =>
-            {
-                return context.Projects.ToList();
-            })
-.WithName("GetProjects");
+//            app.MapGet("/Project", (ProjectDbContext context) =>
+//            {
+//                return Context.Projects.ToList();
+//            })
+//.WithName("GetProjects");
             //.WithOpenApi();
 
             app.MapPost("/Project", (Project project, ProjectDbContext context) =>
