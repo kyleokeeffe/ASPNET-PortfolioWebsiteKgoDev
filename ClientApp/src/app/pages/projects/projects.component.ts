@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-projects',
@@ -15,10 +16,10 @@ export class ProjectsComponent {
     }, error => console.error(error));
   }
 }
-interface Project {
-  id: string;
-  name: string;
-  type: number;
-  language: number;
-  description: string;
-}
+//interface Project {
+//  id: string;
+//  name: string;
+//  type: number;
+//  language: number;
+//  description: string;
+//}

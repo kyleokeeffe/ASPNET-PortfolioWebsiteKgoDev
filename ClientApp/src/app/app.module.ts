@@ -12,6 +12,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MyServicesComponent } from './pages/my-services/my-services.component';
+import { ProjectItemComponent } from './pages/project-item/project-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyServicesComponent } from './pages/my-services/my-services.component';
     FetchDataComponent,
     ProjectsComponent,
     AboutComponent,
-    MyServicesComponent
+    MyServicesComponent,
+    ProjectItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
