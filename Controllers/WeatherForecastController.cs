@@ -22,17 +22,17 @@ namespace PortfolioWebsiteKgoDev.Controllers
         [HttpGet]
         public  IEnumerable<WeatherForecast> Get(ProjectDbContext context)
         {
-            Project proj1 = new Project();
+           // Project proj1 = new Project();
 
-           // proj1.Id = 1;
-            proj1.Name = "Proj1";
-            proj1.Type = "WebApp";
-            proj1.Language = "CSharp";
-            proj1.Description="a project";
-            context.Projects.Add(proj1);
-            context.SaveChanges();
-            var projs = context.Projects.ToList<Project>();
-            Console.WriteLine(projs.First<Project>().Name);
+           //// proj1.Id = 1;
+           // proj1.Name = "Proj1";
+           // proj1.Type = "WebApp";
+           // proj1.Language = "CSharp";
+           // proj1.Description="a project";
+           // context.Projects.Add(proj1);
+           // context.SaveChanges();
+           // var projs = context.Projects.ToList<Project>();
+           // Console.WriteLine(projs.First<Project>().Name);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
