@@ -1,7 +1,7 @@
 export interface Project {
   id: string;
   name: string;
-  type: number;
-  language: number;
+  type: string;
+  language: string;
   description: string;
 }

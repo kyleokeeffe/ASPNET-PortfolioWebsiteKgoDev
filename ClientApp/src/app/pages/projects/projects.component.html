@@ -1,26 +1,24 @@
-<h1 id="tableLabel">Projects</h1>
+<div class="container w-100">
+    <!-- Card deck for project samples -->
+    <label for="slctType">Project Type</label>"
+    <select x:Name="slctType" [(ngModel)]="selectedType" (change)="updateTypeSelect($event)">
+        <option *ngFor="let item of selectTypeOptions" [value]="item">
+            {{item}}
+        </option>
 
-<p>This component demonstrates fetching data from the server.</p>
+    </select>
+    <label for="slctLang">Language</label>
+    <select x:Name="slctLang" [(ngModel)]="selectedLang" (change)="updateLangSelect($event)">
+        <option *ngFor="let item of selectLangOptions" [value]="item">
+            {{item}}
+        </option>
+    </select>
 
-<p *ngIf="!projects?.length"><em>Loading...</em></p>
+    <div class="card-deck w-100 d-flex flex-wrap align-content-around justify-content-center">
+        <app-project-item class="card" *ngFor="let projectItem of projectsFiltered" [projectItem]="projectItem">
 
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="projects.length">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Language</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let project of projects">
-            <td>{{ project.id }}</td>
-            <td>{{ project.name}}</td>
-            <td>{{ project.type}}</td>
-            <td>{{ project.language}}</td>
-            <td>{{ project.description}}</td>
-        </tr>
-    </tbody>
-</table>
+        </app-project-item>
+    </div>
+    <div>
+    </div>
+</div>
