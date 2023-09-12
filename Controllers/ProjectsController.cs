@@ -22,7 +22,7 @@ namespace PortfolioWebsiteKgoDev.Controllers
 
         // GET: api/Projects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Project>>> Get()
+        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
         {
             //    List<Project> projects = new List<Project>();
             //    Project proj1 = new Project();
