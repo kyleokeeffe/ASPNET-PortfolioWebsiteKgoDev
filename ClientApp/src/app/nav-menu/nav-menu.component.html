@@ -1,41 +1,17 @@
-<header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">PortfolioWebsiteKgoDev</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
-          <ul class="navbar-nav flex-grow">
-              <li class="nav-item"
-                  [routerLinkActive]="['link-active']"
-                  [routerLinkActiveOptions]="{ exact: true }">
-                  <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-              </li>
-              <li class="nav-item" [routerLinkActive]="['link-active']">
-                  <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
-              </li>
-              <li class="nav-item" [routerLinkActive]="['link-active']">
-                  <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
-              </li>
-              <li class="nav-item" [routerLinkActive]="['link-active']">
-                  <a class="nav-link text-dark" [routerLink]="['/projects']">Projects</a>
-              </li>
-          </ul>
-      </div>
+
+
+
+<header class="mb-auto">
+    <div>
+        <h3 class="float-md-start mb-0">
+            <a class="navbar-brand" [routerLink]="['/']"><img src="../../assets/images/logo2.png" /></a>
+        </h3>
+
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" [routerLink]="['/about']">About</a>
+            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/services']">Services</a>
+            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">Projects</a>
+        </nav>
     </div>
-  </nav>
 </header>
+
