@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { tap, forkJoin } from 'rxjs';
 import { Project } from '../../models/project.model';
+import { DataServiceService } from '../../services/data-service.service';
 
 @Component({
   selector: 'app-projects',
@@ -26,11 +28,14 @@ export class ProjectsComponent {
   selectedType = "All"
   selectedLang = "All"
 
-  constructor(private route:ActivatedRoute, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private route: ActivatedRoute, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<Project[]>(baseUrl + 'projects').subscribe(result => {
       this.projects = result;
+      this.projectsFiltered = result;
     }, error => console.error(error));
-    this.projectsFiltered = this.projects;
+
+
+
   }
 
   ngOnInit(): void {
@@ -49,7 +54,15 @@ export class ProjectsComponent {
     this.selectedLang = e.target.value;
     this.valueSelected();
   }
+  //public filtervalue() {
+  //  this.dataService.filterProjects(this.selectedType, this.selectedLang)
+  //    .subscribe(result => {
+  //      this.projectsFiltered = result;
+
+  //    }, error => console.error(error));
+  //}
   public valueSelected() {
+   
     if (this.selectedType == "All" && this.selectedLang == "All") {
       this.projectsFiltered = this.projects;
     }
