@@ -35,6 +35,8 @@ import { ProjectItemComponent } from './pages/project-item/project-item.componen
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'projects', component: ProjectsComponent },
+      { path: 'my-services', component: MyServicesComponent },
+      { path: 'about', component: AboutComponent },
     ])
   ],
   providers: [],
