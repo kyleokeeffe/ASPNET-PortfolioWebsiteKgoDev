@@ -12,8 +12,25 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+
+}
+.navbar-nav{
+  color: yellow;
+  border-bottom: .25rem solid transparent;
+}
+.nav-link {
+  border-bottom: .25rem solid transparent;
 }
 
+.nav-link:hover,
+.nav-link:focus {
+  border-bottom-color: rgb(25,25,25);
+}
+
+.navbar-nav .active {
+  color: red;
+  border-bottom-color: blue;
+}
 .nav-masthead .nav-link {
   color: rgba(255, 255, 255, .5);
   border-bottom: .25rem solid transparent;
