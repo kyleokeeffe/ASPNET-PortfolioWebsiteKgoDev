@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace KgoDevBackend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ProjectsController:ControllerBase
     {
        

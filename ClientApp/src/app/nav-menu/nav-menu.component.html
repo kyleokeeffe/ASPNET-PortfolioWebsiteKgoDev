@@ -1,4 +1,4 @@
-
+<!--
 
 
 <header class="mb-auto">
@@ -13,5 +13,26 @@
             <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">Projects</a>
         </nav>
     </div>
-</header>
+</header>-->
 
+<header>
+
+    <div >
+        <nav class="nav navbar-nav justify-content-center float-md-start">
+            <a id="homeLink" class="nav-link fw-bold py-1 px-0 active">
+                Home
+            </a>
+            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
+                About
+            </a>
+            <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
+                Projects
+            </a>
+            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
+                Services
+            </a>
+        </nav>
+    
+    </div>
+
+</header>

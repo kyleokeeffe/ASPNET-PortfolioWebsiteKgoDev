@@ -13,6 +13,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MyServicesComponent } from './pages/my-services/my-services.component';
 import { ProjectItemComponent } from './pages/project-item/project-item.component';
+import { AddEditProjectComponent } from './pages/projects/add-edit-project/add-edit-project.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProjectItemComponent } from './pages/project-item/project-item.componen
     ProjectsComponent,
     AboutComponent,
     MyServicesComponent,
-    ProjectItemComponent
+    ProjectItemComponent,
+    AddEditProjectComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,6 +39,7 @@ import { ProjectItemComponent } from './pages/project-item/project-item.componen
       { path: 'projects', component: ProjectsComponent },
       { path: 'my-services', component: MyServicesComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'add-edit', component: AddEditProjectComponent }
     ])
   ],
   providers: [],
