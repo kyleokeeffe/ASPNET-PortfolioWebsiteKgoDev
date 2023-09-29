@@ -6,7 +6,28 @@ html {
   html {
     font-size: 16px;
   }
+  #hamburgerNav{
+      display:none;
+
+  }
+  #fullNav{
+      display:block;
+  }
 }
+@media (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+
+  #hamburgerNav {
+    display: block;
+  }
+
+  #fullNav {
+    display: none;
+  }
+}
+
 
 a.navbar-brand {
   white-space: normal;
@@ -15,7 +36,7 @@ a.navbar-brand {
 
 }
 .navbar-nav{
-  color: yellow;
+  /*color: yellow;*/
   border-bottom: .25rem solid transparent;
 }
 .nav-link {
@@ -24,13 +45,142 @@ a.navbar-brand {
 
 .nav-link:hover,
 .nav-link:focus {
-  border-bottom-color: rgb(25,25,25);
+  border-bottom-color: grey;
 }
 
 .navbar-nav .active {
-  color: red;
+  /*color: red;*/
   border-bottom-color: blue;
 }
+
+
+
+.movingBorder {
+  width: 60vw;
+  height: 60vh;
+  border: solid 5px lime;
+  position: relative;
+  background: pink;
+  animation: changeBorders 5s linear;
+}
+
+@keyframes changeBorders {
+  0% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+  }
+
+  25% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+  }
+
+  25.02% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+    border-bottom: solid 5px lime;
+  }
+
+  50% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+    border-bottom: solid 5px lime;
+  }
+
+  50.02% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+    border-bottom: solid 5px lime;
+    border-right: solid 5px lime;
+  }
+
+  75% {
+    border: solid 5px white;
+    border-left: solid 5px lime;
+    border-bottom: solid 5px lime;
+    border-right: solid 5px lime;
+  }
+
+  75.02% {
+    border: solid 5px lime;
+  }
+}
+
+.navLink::after {
+  width: 5px;
+  background-color: white;
+  height: 0px;
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  z-index: 1;
+  animation: movedown 5s linear;
+  animation-fill-mode: forwards;
+  content: '';
+  display: inline-block;
+}
+
+@keyframes movedown {
+  0% {
+    height: calc(100% + 10px);
+    width: 5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  25% {
+    height: 5px;
+    width: 5px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  25.01% {
+    height: 5px;
+    width: calc(100% + 10px);
+    bottom: -5px;
+    left: -5px;
+  }
+
+  50% {
+    height: 5px;
+    width: 0%;
+    left: 100%;
+    bottom: -5px;
+  }
+
+  50.01% {
+    height: calc(100% + 10px);
+    width: 5px;
+    left: 100%;
+    bottom: -5px;
+  }
+
+  75% {
+    height: 0;
+    width: 5px;
+    left: 100%;
+    bottom: 100%;
+  }
+
+  75.01% {
+    height: 5px;
+    width: calc(100% + 10px);
+    left: 0%;
+    bottom: 100%;
+  }
+
+  99.01% {
+    height: 5px;
+    width: 0;
+    left: 0;
+    bottom: 100%;
+  }
+}
+
+
+
+
 .nav-masthead .nav-link {
   color: rgba(255, 255, 255, .5);
   border-bottom: .25rem solid transparent;

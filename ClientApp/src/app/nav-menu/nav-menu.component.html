@@ -17,8 +17,11 @@
 
 <header>
 
-    <div >
-        <nav class="nav navbar-nav justify-content-center float-md-start">
+
+    <div id="hamburgerNav">
+
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
             <a id="homeLink" class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
                 Home
             </a>
@@ -31,8 +34,32 @@
             <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
                 Services
             </a>
-        </nav>
-    
+        </div>
     </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    </div>
+    <nav id="fullNav" class="nav navbar-nav justify-content-center float-md-start bg-dark">
+        <a id="homeLink" class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
+            Home
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
+            About
+        </a>
+        <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
+            Projects
+        </a>
+        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
+            Services
+        </a>
+    </nav>
+
+
 
 </header>

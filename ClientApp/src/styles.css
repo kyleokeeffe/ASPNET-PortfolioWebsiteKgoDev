@@ -28,13 +28,13 @@ body {
 .main-left {
   grid-area: main-left;
   /* grid-column:1; */
-  background-color: #000;
-  color: #fff;
+  /*background-color: #000;*/
+  /*color: #fff;*/
 }
 .main-right {
   grid-area: main-right;
   /* grid-column: 2; */
-  background-color: blue;
+  /*background-color: blue;*/
 }
 .btn-light,
 .btn-light:hover,
