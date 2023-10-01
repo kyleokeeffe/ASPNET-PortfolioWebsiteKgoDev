@@ -16,27 +16,39 @@ export class MyServicesComponent {
   ngOnInit(): void {
   }
   ShowWebDev() {
-    this.webDevDiv = true;
+    if (this.webDevDiv == true)
+      this.webDevDiv = false;
+    else if (this.webDevDiv == false)
+      this.webDevDiv = true;
     this.standProgDiv = false;
     this.dbAdminDiv = false;
     this.resHostDiv = false;
   }
   ShowStandProg() {
+    if (this.standProgDiv == true)
+      this.standProgDiv = false;
+    else if (this.standProgDiv == false)
+      this.standProgDiv = true;
     this.webDevDiv = false;
-    this.standProgDiv = true;
     this.dbAdminDiv = false;
     this.resHostDiv = false;
   }
   ShowDbAdmin() {
+    if (this.dbAdminDiv == true)
+      this.dbAdminDiv = false;
+    else if (this.dbAdminDiv == false)
+      this.dbAdminDiv = true;
     this.webDevDiv = false;
     this.standProgDiv = false;
-    this.dbAdminDiv = true;
     this.resHostDiv = false;
   }
   ShowResHost() {
+    if (this.resHostDiv == true)
+      this.resHostDiv = false;
+    else if (this.resHostDiv == false)
+      this.resHostDiv = true;
     this.webDevDiv = false;
     this.standProgDiv = false;
     this.dbAdminDiv = false;
-    this.resHostDiv = true;
   }
 }

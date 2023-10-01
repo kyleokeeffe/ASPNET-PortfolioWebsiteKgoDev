@@ -28,7 +28,15 @@ html {
   }
 }
 
-
+#navLogo{
+    height:50px;
+}
+#navLinks{
+    display:flex;
+    flex-direction:column;
+    justify-content:left;
+    width:100%;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -38,9 +46,18 @@ a.navbar-brand {
 .navbar-nav{
   /*color: yellow;*/
   border-bottom: .25rem solid transparent;
+  display:flex;
+  flex-direction:column;
+  align-items:start;
+  justify-content:left;
+  height:100%;
 }
 .nav-link {
   border-bottom: .25rem solid transparent;
+  text-align:left;
+  margin:1rem auto 1rem 0;
+  width:100%;
+  
 }
 
 .nav-link:hover,

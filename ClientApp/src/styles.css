@@ -27,6 +27,7 @@ body {
 }
 .main-left {
   grid-area: main-left;
+  height:100%;
   /* grid-column:1; */
   /*background-color: #000;*/
   /*color: #fff;*/
