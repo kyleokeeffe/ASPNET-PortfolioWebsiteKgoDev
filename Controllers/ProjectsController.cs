@@ -1,142 +1,76 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using KgoDevBackend.Models;
+using KgoDevBackend.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using PortfolioWebsiteKgoDev;
 
-namespace PortfolioWebsiteKgoDev.Controllers
+
+namespace KgoDevBackend.Controllers
 {
-    [Route("[controller]")]
     [ApiController]
-    public class ProjectsController : ControllerBase
+    [Route("[controller]")]
+    public class ProjectsController:ControllerBase
     {
-        private readonly ProjectDbContext _context;
+       
+        private readonly ProjectsService _projectsService;
 
-        public ProjectsController(ProjectDbContext context)
-        {
-            _context = context;
-        }
+        public ProjectsController(ProjectsService booksService) =>
+            _projectsService = booksService;
 
-        // GET: api/Projects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
+        public async Task<List<Project>> Get() =>
+            await _projectsService.GetAsync();
+
+        [HttpGet("{id:length(24)}")]
+        public async Task<ActionResult<Project>> Get(string id)
         {
-            //    List<Project> projects = new List<Project>();
-            //    Project proj1 = new Project();
+            var book = await _projectsService.GetAsync(id);
 
-            //    // proj1.Id = 1;
-            //    proj1.Name = "Proj1";
-            //    proj1.Type = "WebApp";
-            //    proj1.Language = "CSharp";
-            //    proj1.Description = "a project";
-            //    projects.Add(proj1);
-            //    //context.Projects.Add(proj1);
-            //    //context.SaveChanges();
-            //    //var projs = context.Projects.ToList<Project>();
-            //    //Console.WriteLine(projs.First<Project>().Name);
-            //    //var listProj = ArgumentOutOfRangeException
-
-            //    IEnumerable<Project> projects1 = projects;
-            //    return new ActionResult<IEnumerable<Project>>(projects1);
-            //}
-            if (_context.Projects == null)
-            {
-                return NotFound("kyle");
-            }
-            return await _context.Projects.ToListAsync();
-
-            
-        }
-        // GET: api/Projects/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Project>> GetProject(int id)
-        {
-          if (_context.Projects == null)
-          {
-              return NotFound();
-          }
-            var project = await _context.Projects.FindAsync(id);
-
-            if (project == null)
+            if (book is null)
             {
                 return NotFound();
             }
 
-            return project;
+            return book;
         }
 
-        // PUT: api/Projects/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutProject(int id, Project project)
-        {
-            if (id != project.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(project).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjectExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Projects
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Project>> PostProject(Project project)
+        public async Task<IActionResult> Post(Project newBook)
         {
-          if (_context.Projects == null)
-          {
-              return Problem("Entity set 'ProjectDbContext.Projects'  is null.");
-          }
-            _context.Projects.Add(project);
-            await _context.SaveChangesAsync();
+            await _projectsService.CreateAsync(newBook);
 
-            return CreatedAtAction("GetProject", new { id = project.Id }, project);
+            return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
         }
 
-        // DELETE: api/Projects/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProject(int id)
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Update(string id, Project updatedBook)
         {
-            if (_context.Projects == null)
-            {
-                return NotFound();
-            }
-            var project = await _context.Projects.FindAsync(id);
-            if (project == null)
+            var book = await _projectsService.GetAsync(id);
+
+            if (book is null)
             {
                 return NotFound();
             }
 
-            _context.Projects.Remove(project);
-            await _context.SaveChangesAsync();
+            updatedBook.Id = book.Id;
+
+            await _projectsService.UpdateAsync(id, updatedBook);
 
             return NoContent();
         }
 
-        private bool ProjectExists(int id)
+        [HttpDelete("{id:length(24)}")]
+        public async Task<IActionResult> Delete(string id)
         {
-            return (_context.Projects?.Any(e => e.Id == id)).GetValueOrDefault();
+            var book = await _projectsService.GetAsync(id);
+
+            if (book is null)
+            {
+                return NotFound();
+            }
+
+            await _projectsService.RemoveAsync(id);
+
+            return NoContent();
         }
     }
 }
+

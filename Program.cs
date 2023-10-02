@@ -1,5 +1,10 @@
+using KgoDevBackend.Models;
+using KgoDevBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
 
 namespace PortfolioWebsiteKgoDev
 {
@@ -7,83 +12,60 @@ namespace PortfolioWebsiteKgoDev
     {
         public static void Main(string[] args)
         {
+           
+
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-            builder.Services.AddControllersWithViews();
-            var connection = String.Empty;
-            if (builder.Environment.IsDevelopment())
-            {
-                builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
-                connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
-            }
-            else
-            {
-                connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
-            }
-
-            builder.Services.AddDbContext<ProjectDbContext>(options =>
-                options.UseSqlServer(connection));
+            builder.Services.Configure<PortfolioDatabaseSettings>(
+                builder.Configuration.GetSection("PortfolioDatabase"));
+            builder.Services.AddSingleton<ProjectsService>();
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseRouting();
+
+            app.UseAuthorization();
 
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller}/{action=Index}/{id?}");
+            app.MapControllers();
 
-            app.MapFallbackToFile("index.html");
-
-//            app.MapGet("/Project", (ProjectDbContext context) =>
-//            {
-//                return Context.Projects.ToList();
-//            })
-//.WithName("GetProjects");
-            //.WithOpenApi();
-
-            app.MapPost("/Project", (Project project, ProjectDbContext context) =>
-            {
-                context.Add(project);
-                context.SaveChanges();
-            })
-            .WithName("CreateProject");
-     //.WithOpenApi();
             app.Run();
         }
     }
-    public class Project
-    {
-     
-
    
+    //EfCore project model
+    //public class Project
+    //{
+    //    public int Id { get; set; }
+    //    public string Name { get; set; } = null!;
+    //    public string Type { get; set; } = null!;
+    //    public string Language { get; set; } = null!;
+    //    public string Description { get; set; } = null!;
+    //    public string Photo { get; set; } = null!;
+    //    public string Link { get; set; } = null!;
+    //}
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Language { get; set; }
-        public string Description { get; set; }
-        public string Photo { get; set; }
-        public string Link { get; set; }
-    }
-    public class ProjectDbContext : Microsoft.EntityFrameworkCore.DbContext
-    {
-        public ProjectDbContext(DbContextOptions<ProjectDbContext> options)
-            : base(options)
-        {
-        }
+    //SQL DatabaseContext
+    //public class ProjectDbContext : Microsoft.EntityFrameworkCore.DbContext
+    //{
+    //    public ProjectDbContext(DbContextOptions<ProjectDbContext> options)
+    //        : base(options)
+    //    {
+    //    }
 
-        public Microsoft.EntityFrameworkCore.DbSet<Project> Projects { get; set; }
-    }
+    //    public Microsoft.EntityFrameworkCore.DbSet<Project> Projects { get; set; }
+    //}
 }
