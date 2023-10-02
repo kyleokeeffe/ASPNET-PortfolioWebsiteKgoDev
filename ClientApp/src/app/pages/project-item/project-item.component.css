@@ -13,6 +13,7 @@
 
 .card-title {
   color: #fdba31;
+  height:contain;
 }
 
 .card-text {
