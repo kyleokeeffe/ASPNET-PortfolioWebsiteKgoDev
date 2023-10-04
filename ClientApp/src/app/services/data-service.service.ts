@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { Project } from '../models/project.model';
 
 @Injectable({
@@ -11,7 +11,9 @@ export class DataServiceService {
   baseUrl: string;
   public projects: Project[] = [];
 
-
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(_http: HttpClient, @Inject('BASE_URL') _baseUrl: string) {
     this.http = _http;
@@ -23,6 +25,13 @@ export class DataServiceService {
      this.projects = result;
    }, error => console.error(error));
     return of(this.projects);
+    
+  }
+  getProject(id: string):Observable<Project> {
+    return this.http.get<Project>(this.baseUrl+'/'+id);
+  }
+  addProject(project:Project):Observable<Project> {
+    return this.http.post<Project>(this.baseUrl, project, this.httpOptions);
     
   }
 

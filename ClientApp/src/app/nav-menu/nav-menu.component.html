@@ -1,55 +1,81 @@
-<!--
 
 
-<header class="mb-auto">
-    <div>
-        <h3 class="float-md-start mb-0">
-            <a class="navbar-brand" [routerLink]="['/']"><img src="../../assets/images/logo2.png" /></a>
-        </h3>
+<header [ngClass]="[navStyle]">
 
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" [routerLink]="['/about']">About</a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">My Services</a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">Projects</a>
-        </nav>
-    </div>
-</header>-->
+    <svg class="hamburgerRight" *ngIf="!isExpanded"
+         (click)="toggle()"
+         width="7%"
+         height="7%"
+         viewBox="0 0 100 100"
+         preserveAspectRatio="none">
+        <rect x="0"
+              y="0"
+              width="100"
+              height="100"
+              fill="none" />
+        <circle id="expCirc"
+                cx="50"
+                cy="50"
+                r="40"
+                stroke="dimgray"
+                stroke-width="4"
+                fill="darkgrey" />
+        <rect x="20"
+              y="30"
+              rx="5"
+              ry="5"
+              width="60"
+              height="8"
+              style=" fill:grey; stroke:black; stroke-width:2; opacity:1" />
+        <rect x="20"
+              y="45"
+              rx="5"
+              ry="5"
+              width="60"
+              height="8"
+              style=" fill:grey; stroke:black; stroke-width:2; opacity:1" />
+        <rect x="20"
+              y="60"
+              rx="5"
+              ry="5"
+              width="60"
+              height="8"
+              style=" fill:grey; stroke:black; stroke-width:2; opacity:1" />
 
-<header>
-
+    </svg>
 
     <div id="hamburgerNav">
 
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <a id="homeLink" class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
-                Home
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
-                About
-            </a>
-            <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
-                Projects
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
-                Services
-            </a>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <a id="homeLink" class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
+                    Home
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
+                    About
+                </a>
+                <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
+                    Projects
+                </a>
+                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
+                    Services
+                </a>
+            </div>
         </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
 
     </div>
-    <nav id="fullNav" class="nav navbar-nav bg-dark ">
-    <!--<nav id="fullNav" class="nav navbar-nav d-lg-flex justify-content-center float-md-start bg-dark ">-->
+    <nav id="fullNav" class="nav navbar-nav bg-dark " *ngIf="isExpanded">
+        <!--<nav id="fullNav" class="nav navbar-nav d-lg-flex justify-content-center float-md-start bg-dark ">-->
 
         <div id="navLogo">
-            hello
+            <img src="../assets/images/logo2.png" />
         </div>
         <div id="navLinks">
             <a class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">

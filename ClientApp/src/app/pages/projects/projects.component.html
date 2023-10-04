@@ -1,6 +1,6 @@
 <div class="container w-100">
     <!-- Card deck for project samples -->
-    <a [routerLink]="['/add-edit']">Add new Project</a>
+    <!--<a [routerLink]="['/add-edit']">Add new Project</a>-->
     <label for="slctType">Project Type</label>"
     <select x:Name="slctType" [(ngModel)]="selectedType" (change)="updateTypeSelect($event)">
         <option *ngFor="let item of selectTypeOptions" [value]="item">
