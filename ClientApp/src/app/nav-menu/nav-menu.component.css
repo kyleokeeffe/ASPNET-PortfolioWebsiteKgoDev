@@ -10,14 +10,20 @@ html {
   html {
     font-size: 16px;
   }
-  .expandedNav {
+  #nav-small{
+      display:none;
+  }
+  #nav-large{
+      display:block;
+  }
+  /*.expandedNav {
     height:100%;
     width: 1fr;
-  /*  transition:1s linear width;
+  *//*  transition:1s linear width;
     animation-name: expand-nav;
     animation-duration:1s;*/
 
-  }
+  /*}*/
 
  /* @keyframes expand-nav{
       from{
@@ -27,7 +33,7 @@ html {
           width:1fr;
       }
   }*/
-  .collapsedNav {
+/*  .collapsedNav {
     height: 0%;
     width: 0;
   }
@@ -49,14 +55,21 @@ html {
     z-index: 100;
     min-height: 40px;
     min-width: 40px;
-  }
+  }*/
 }
 
 @media (max-width: 767px) {
   html {
     font-size: 16px;
   }
-  #hamburgerNav {
+  #nav-small {
+    display: block;
+  }
+
+  #nav-large {
+    display: none;
+  }
+/*  #hamburgerNav {
     display: block;
   }
   #fullNav {
@@ -64,9 +77,20 @@ html {
   }
   .hamburgerRight {
     display: none;
-  }
+  }*/
 }
-
+.navbar{
+    max-height:10%;
+}
+.container-fluid{
+    height:auto;
+}
+.img-fluid{
+    height:contain;
+}
+.navbar-toggler{
+    height:contain;
+}
 #navLogo{
     height:50px;
 }
@@ -76,11 +100,14 @@ html {
     justify-content:left;
     width:100%;
 }
+
+#navLogoLink{
+    height:auto;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-
 }
 .navbar-nav{
   border-bottom: .25rem solid transparent;
