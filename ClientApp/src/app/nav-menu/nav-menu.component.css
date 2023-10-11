@@ -16,6 +16,12 @@ html {
   #nav-large{
       display:block;
   }
+  .container-fluid{
+      max-height:100px;
+      display:flex;
+      flex-direction:row;
+
+  }
   /*.expandedNav {
     height:100%;
     width: 1fr;
@@ -82,18 +88,21 @@ html {
 .navbar{
     max-height:10%;
 }
-.container-fluid{
+/*.container-fluid{
     height:auto;
-}
-.img-fluid{
+}*/
+/*.img-fluid{
     height:contain;
+}*/
+#logoContainer{
+    height:100%;
 }
 .navbar-toggler{
     height:contain;
 }
-#navLogo{
+/*#navLogo{
     height:50px;
-}
+}*/
 #navLinks{
     display:flex;
     flex-direction:column;
@@ -103,6 +112,10 @@ html {
 
 #navLogoLink{
     height:auto;
+}
+#navBrandImage{
+    height:100%;
+    width:auto;
 }
 a.navbar-brand {
   white-space: normal;

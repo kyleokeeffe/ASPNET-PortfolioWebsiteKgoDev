@@ -16,6 +16,8 @@ import { ProjectItemComponent } from './pages/project-item/project-item.componen
 import { AddEditProjectComponent } from './pages/projects/add-edit-project/add-edit-project.component';
 import { AddEditSummaryComponent } from './pages/projects/add-edit-summary/add-edit-summary.component';
 import { ProjectDetailsComponent } from './pages/projects/project-details/project-details.component';
+import { SubserviceComponent } from './pages/my-services/subservice/subservice.component';
+import { ServiceComponent } from './pages/my-services/service/service.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ProjectDetailsComponent } from './pages/projects/project-details/projec
     ProjectItemComponent,
     AddEditProjectComponent,
     AddEditSummaryComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    SubserviceComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,7 +49,8 @@ import { ProjectDetailsComponent } from './pages/projects/project-details/projec
       { path: 'about', component: AboutComponent },
       { path: 'add-edit', component: AddEditProjectComponent },
       { path: 'add-edit-summary/:id', component: AddEditSummaryComponent },
-      { path: 'project-details/:id', component: ProjectDetailsComponent }
+      { path: 'project-details/:id', component: ProjectDetailsComponent },
+      { path: 'subservice', component: SubserviceComponent }
     ])
   ],
   providers: [],
