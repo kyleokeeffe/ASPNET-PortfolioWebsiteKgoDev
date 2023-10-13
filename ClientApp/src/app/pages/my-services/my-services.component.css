@@ -4,11 +4,28 @@ body {
   color: rgb(var(--bs-tertiary-color-rgb));
 }
 
-.card-deck{
-    width:100%;
+.page-container {
+  margin-top: 60px;
+}
+.subservice-container{
+    justify-content:space-evenly;
+}
+.card-deck {
+  width: 100%;
+}
+@media (min-width: 768px) {
+.subservice-container{
+    flex-direction:row;
+}
 
 }
-/*.carousel {
+@media (max-width: 767px) {
+  .subservice-container {
+    flex-direction: column;
+  }
+}
+
+  /*.carousel {
   margin-bottom: 4rem;
 }
 
@@ -27,55 +44,59 @@ body {
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }*/
 
-.img {
-  max-height: contain;
-}
+  .img {
+    max-height: contain;
+  }
 
-.row{
-    width:100%;
-}
-.card {
-  cursor: pointer;
-  
-  background-color:darkslateblue;
-  border-left:2px solid orange;
-  border-radius:0px;
-  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  /*margin:40px;*/
-  width:100%;
+  .row {
+    width: 100%;
+  }
+
+  .card {
+    cursor: pointer;
+    background-color: darkslateblue;
+    border-left: 2px solid orange;
+    border-radius: 0px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    /*margin:40px;*/
+    width: 100%;
+  }
+
+    .card:hover {
+      animation-name: grow;
+      animation-duration: 0.5s;
+      transform: scale(1.05);
+    }
+
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.05);
+    }
+  }
 
 
+  .card-title {
+    /*color: #fdba31;*/
+    color: white;
+    font-size: 1em;
+    height: contain;
+  }
 
-}
+  .card-text {
+    /*color: #e2dada;*/
+    color: lightgrey;
+  }
 
-.card:hover{
-    animation-name:grow;
-    animation-duration:0.5s;
-    transform:scale(1.05);
-}
-@keyframes grow{
-    0%{transform:scale(1);}
-    100%{transform:scale(1.05);}
-}
+  .card-body {
+    max-height: 100%;
+    max-width: 100%;
+  }
 
-
-.card-title {
-  /*color: #fdba31;*/
-  color:white;
-  font-size:1em;
-  height: contain;
-}
-
-.card-text {
-  /*color: #e2dada;*/
-  color:lightgrey;
-}
-
-.card-body {
-  max-height: 100%;
-  max-width: 100%;
-}
-.serviceDiv{
-    width:100%;
-}
+  .serviceDiv {
+    width: 100%;
+  }
