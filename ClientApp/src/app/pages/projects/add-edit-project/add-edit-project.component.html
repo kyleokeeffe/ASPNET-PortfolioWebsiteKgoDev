@@ -1,28 +1,63 @@
-<p>add-edit-project works!</p>
-<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+<form novalidate (ngSubmit)="onSubmit()" onformchange="ngForm">
     <div class="form-group">
         <label>Name</label>
-        <input type="text" class="form-control" name="name" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            [(ngModel)]="newProject.name"
+            #name="ngModel"
+            required
+            />
     </div>
     <div class="form-group">
         <label>Type</label>
-        <input type="text" class="form-control" name="type" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            name="type"
+            id="type"
+            [(ngModel)]="newProject.type"
+            #type="ngModel"
+            required
+            />
     </div>
     <div class="form-group">
         <label>Language</label>
-        <input type="text" class="form-control" name="language" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            name="language"
+            [(ngModel)]="newProject.language"
+            />
     </div>
     <div class="form-group">
         <label>Description</label>
-        <input type="text" class="form-control" name="description" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            name="description"
+            [(ngModel)]="newProject.description"
+            />
     </div>
     <div class="form-group">
         <label>Photo</label>
-        <input type="text" class="form-control" name="photo" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            name="photo"
+            [(ngModel)]="newProject.photo"
+            />
     </div>
     <div class="form-group">
         <label>Link</label>
-        <input type="text" class="form-control" name="link" ngModel />
+        <input
+            type="text"
+            class="form-control"
+            name="link"
+            [(ngModel)]="newProject.link"
+            />
     </div>
     <button type="submit">Submit</button>
 </form>

@@ -1,50 +1,128 @@
+
+
+/*
 html {
   font-size: 14px;
 }
+*/
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+  #nav-small{
+      display:none;
+  }
+  #nav-large{
+      display:block;
+  }
+  .container-fluid{
+      max-height:100px;
+      display:flex;
+      flex-direction:row;
+
+  }
+  /*.expandedNav {
+    height:100%;
+    width: 1fr;
+  *//*  transition:1s linear width;
+    animation-name: expand-nav;
+    animation-duration:1s;*/
+
+  /*}*/
+
+ /* @keyframes expand-nav{
+      from{
+          width:0
+      }
+      tp{
+          width:1fr;
+      }
+  }*/
+/*  .collapsedNav {
+    height: 0%;
+    width: 0;
+  }
   #hamburgerNav{
       display:none;
 
   }
+ 
   #fullNav{
       display:block;
   }
+
+  .hamburgerRight {
+      display:absolute;
+    position: sticky;
+    top: 2%;
+    left: 98%;
+
+    z-index: 100;
+    min-height: 40px;
+    min-width: 40px;
+  }*/
 }
+
 @media (max-width: 767px) {
   html {
     font-size: 16px;
   }
-
-  #hamburgerNav {
+  #nav-small {
     display: block;
   }
 
+  #nav-large {
+    display: none;
+  }
+/*  #hamburgerNav {
+    display: block;
+  }
   #fullNav {
     display: none;
   }
+  .hamburgerRight {
+    display: none;
+  }*/
 }
-
-#navLogo{
+.navbar{
+    max-height:10%;
+}
+/*.container-fluid{
+    height:auto;
+}*/
+/*.img-fluid{
+    height:contain;
+}*/
+#logoContainer{
+    height:100%;
+}
+.navbar-toggler{
+    height:contain;
+}
+/*#navLogo{
     height:50px;
-}
+}*/
 #navLinks{
     display:flex;
     flex-direction:column;
     justify-content:left;
     width:100%;
 }
+
+#navLogoLink{
+    height:auto;
+}
+#navBrandImage{
+    height:100%;
+    width:auto;
+}
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-
 }
 .navbar-nav{
-  /*color: yellow;*/
   border-bottom: .25rem solid transparent;
   display:flex;
   flex-direction:column;
@@ -66,11 +144,10 @@ a.navbar-brand {
 }
 
 .navbar-nav .active {
-  /*color: red;*/
   border-bottom-color: blue;
 }
 
-
+/*
 
 .movingBorder {
   width: 60vw;
@@ -194,11 +271,11 @@ a.navbar-brand {
     bottom: 100%;
   }
 }
+*/
 
 
 
-
-.nav-masthead .nav-link {
+/*.nav-masthead .nav-link {
   color: rgba(255, 255, 255, .5);
   border-bottom: .25rem solid transparent;
 }
@@ -216,3 +293,4 @@ a.navbar-brand {
   color: #fff;
   border-bottom-color: #fff;
 }
+*/

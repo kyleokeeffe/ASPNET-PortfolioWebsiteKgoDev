@@ -78,193 +78,118 @@
     </button>
 </div>-->
 <!--<div class="card-deck w-100 d-flex flex-sm-column flex-lg-row p-2 flex-wrap align-content-around justify-content-center">-->
+<div class="page-container">
+
 <div class="card-deck">
-    <div class="row">
-
-    <div class="card col-lg ">
-
-        <div class="card-body text-start">
-            <h4 class="card-title">Web Development</h4>
-            <p class="card-text">
-                <a (click)="ShowWebDev()" class="btn btn-lg btn-primary">View Details</a>
-            </p>
-
-        </div>
-        <div *ngIf="webDevDiv">
-            <h3> Web Development Services</h3>
-            <div class="row">
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Full Stack</h2>
-                    <p> MEAN Stack, ASP.Net, EJS</p>
-                    <p><a class="btn btn-secondary" [routerLink]="['/projects','WebApp']">View Projects &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Traditional Web Dev</h2>
-                    <p>HTML5, CSS3, JavaScript</p>
-                    <p><a class="btn btn-secondary" href="#">View Projects &raquo;</a></p>
-                    <!--ToDo: Add link to project page with appropriate filters applied -->
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Heading</h2>
-                    <p>And lastly this, the third column of representative placeholder content.</p>
-                    <p><a class="btn btn-secondary" href="#">View Projects &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-        </div>
-
-    </div>
-    <div class="card col-lg">
-        <div class="card-body text-start">
-            <h4 class="card-title">Standalone Software</h4>
-            <p><a (click)="ShowStandProg()" class="btn btn-lg btn-primary">View Details</a></p>
-        </div>
-
-        <div *ngIf="standProgDiv">
-            <h3> StandAlone Software</h3>
-            <div class="row">
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">C#</h2>
-                    <p> WPF, DB integration, EF core, ML.NET </p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Java</h2>
-                    <p>JFrame gui, RPA dev</p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                    <!--ToDo: Add link to project page with appropriate filters applied -->
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                         role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                    </svg>
-                    <h2 class="fw-normal">Python</h2>
-                    <p>IOT development, machine learning models, natural language processing</p>
-                    <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-        </div>
-    </div>
-    </div>
-    <div class="row">
-
-        <div class="card col-lg">
+    <div class="d-flex flex-column">
+        <div class="card" (click)="ShowWebDev()">
             <div class="card-body text-start">
-                <h4 class="card-title">Database Administration</h4>
-                <p><a (click)="ShowDbAdmin()" class="btn-sm">View Details</a></p>
+                <h4 class="card-title">Web Development</h4>
+                <p class="card-text"></p>
             </div>
-
-            <div *ngIf="dbAdminDiv">
-                <h3>Database Administration</h3>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">Oracle</h2>
-                        <p> SQL Developer, PL SQL development</p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">SQL Server</h2>
-                        <p>SSMS client and server, Query and View development</p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                        <!--ToDo: Add link to project page with appropriate filters applied -->
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">NOSQL</h2>
-                        <p>MongoDB integration</p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row -->
-            </div>
-        </div>
-        <div class="card col-lg">
-            <div class="card-body text-start">
-                <h4 class="card-title">Database Administration</h4>
-                <p><a (click)="ShowDbAdmin()" class="btn-sm">View Details</a></p>
-            </div>
-            <div *ngIf="resHostDiv">
-                <h3>Website Hosting Services</h3>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">Heroku</h2>
-                        <p> </p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">Azure</h2>
-                        <p></p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                        <!--ToDo: Add link to project page with appropriate filters applied -->
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                        </svg>
-                        <h2 class="fw-normal">NOSQL</h2>
-                        <p>MongoDB integration</p>
-                        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-                    </div><!-- /.col-lg-4 -->
+            <div *ngIf="webDevDiv" class="serviceDiv">
+                <h3> Web Development Services</h3>
+                <div class="d-flex subservice-container">
+                    <div class="subservice">
+                        <app-subservice [filterValue]="'WebApp'"
+                                        [title]="'Full Stack'"
+                                        [description]="'MEAN Stack, ASP.Net, EJS'">
+                        </app-subservice>
+                    </div>
+                    <div class="subservice">
+                        <app-subservice [filterValue]="'WebApp'"
+                                        [title]="'Traditional Web Dev'"
+                                        [description]="'HTML5, CSS3, JavaScript'">
+                        </app-subservice>
+                    </div>
                 </div>
             </div>
         </div>
 
-    
-        
+        <div class="card" (click)="ShowStandProg()">
+            <div class="card-body text-start">
+                <h4 class="card-title">Standalone Software</h4>
+                <!--<p><a class="btn btn-lg btn-primary">View Details</a></p>-->
+            </div>
+            <div *ngIf="standProgDiv" class="serviceDiv">
+                <h3> StandAlone Software</h3>
+                <div class="d-flex subservice-container ">
+                    <div class="subservice">
+                        <app-subservice [filterValue]="'CSharp'"
+                                        [title]="'C#'"
+                                        [description]="'WPF, DB integration, EF core, ML.NET'">
+                        </app-subservice>
+                    </div>
+                    <div class="subservice">
+                        <app-subservice [filterValue]="'Java'"
+                                        [title]="'Java'"
+                                        [description]="'JFrame gui'">
+                        </app-subservice>
+                    </div>
+                    <div class="subservice">
+                        <app-subservice [filterValue]="'Python'"
+                                        [title]="'Python'"
+                                        [description]="'IOT development, machine learning models, natural language processing'">
+                        </app-subservice>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">-->
+            <div class="card" (click)="ShowDbAdmin()">
+                <div class="card-body text-start">
+                    <h4 class="card-title">Database Administration</h4>
+                    <!--<p><a class="btn-sm">View Details</a></p>-->
+                </div>
+                <div *ngIf="dbAdminDiv" class="serviceDiv">
+                    <h3>Database Administration</h3>
+                    <div class="d-flex subservice-container">
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'Oracle'"
+                                            [title]="'Oracle'"
+                                            [description]="'SQL Developer, PL SQL development'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'SQLServer'"
+                                            [title]="'SQL Server'"
+                                            [description]="'SSMS client and server, Query and View development'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'NOSQL'"
+                                            [title]="'NOSQL'"
+                                            [description]="'MongoDB Integration'">
+                            </app-subservice>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" (click)="ShowResHost()">
+                <div class="card-body text-start">
+                    <h4 class="card-title">Resource Hosting</h4>
+                    <!--<p><a class="btn-sm">View Details</a></p>-->
+                </div>
+                <div *ngIf="resHostDiv" class="serviceDiv">
+                    <h3>Website Hosting Services</h3>
+                    <div class="d-flex flex-row subservice-container ">
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'Render'"
+                                            [title]="'Render'"
+                                            [description]="'Render, Heroku'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'Azure'"
+                                            [title]="'Azure'"
+                                            [description]="'Full stack Azure hosting'">
+                            </app-subservice>
+                        </div>
+                    </div>
+                <!--</div>-->
+            </div>
+        </div>
     </div>
+</div>
+</div>
 
-
-<!--//full stack developer by SAM Designs from <a href="https://thenounproject.com/browse/icons/term/full-stack-developer/" target="_blank" title="full stack developer Icons">Noun Project</a> (CC BY 3.0)-->
-<!--web development by I Putu Kharismayadi from <a href="https://thenounproject.com/browse/icons/term/web-development/" target="_blank" title="web development Icons">Noun Project</a> (CC BY 3.0)-->
-<!--java by Graphixs_Art from <a href="https://thenounproject.com/browse/icons/term/java/" target="_blank" title="java Icons">Noun Project</a> (CC BY 3.0)-->

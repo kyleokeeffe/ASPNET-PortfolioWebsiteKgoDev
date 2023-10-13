@@ -5,6 +5,7 @@ namespace KgoDevBackend.Models
 {
     public class Project
     {
+        
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
 

@@ -7,26 +7,30 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MyServicesComponent } from './pages/my-services/my-services.component';
 import { ProjectItemComponent } from './pages/project-item/project-item.component';
 import { AddEditProjectComponent } from './pages/projects/add-edit-project/add-edit-project.component';
+import { AddEditSummaryComponent } from './pages/projects/add-edit-summary/add-edit-summary.component';
+import { ProjectDetailsComponent } from './pages/projects/project-details/project-details.component';
+import { SubserviceComponent } from './pages/my-services/subservice/subservice.component';
+import { ServiceComponent } from './pages/my-services/service/service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     ProjectsComponent,
     AboutComponent,
     MyServicesComponent,
     ProjectItemComponent,
-    AddEditProjectComponent
+    AddEditProjectComponent,
+    AddEditSummaryComponent,
+    ProjectDetailsComponent,
+    SubserviceComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,12 +38,13 @@ import { AddEditProjectComponent } from './pages/projects/add-edit-project/add-e
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'projects', component: ProjectsComponent },
       { path: 'my-services', component: MyServicesComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'add-edit', component: AddEditProjectComponent }
+      { path: 'add-edit', component: AddEditProjectComponent },
+      { path: 'add-edit-summary/:id', component: AddEditSummaryComponent },
+      { path: 'project-details/:id', component: ProjectDetailsComponent },
+      { path: 'subservice', component: SubserviceComponent }
     ])
   ],
   providers: [],

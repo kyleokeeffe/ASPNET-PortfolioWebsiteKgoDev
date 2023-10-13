@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Project } from '../../../models/project.model';
+import { DataServiceService } from '../../../services/data-service.service';
 
 @Component({
   selector: 'app-add-edit-project',
@@ -8,7 +11,16 @@ import { NgForm } from '@angular/forms';
 })
 export class AddEditProjectComponent {
 
-  onSubmit(form: NgForm) {
-    //('Name:' + form.controls['name'].value);
+  newProject!: Project;
+  constructor(private dataService: DataServiceService, private router:Router) {
+   
+  }
+  onSubmit() {
+    //this.submitted = true;
+  }
+  addProject(project: Project) {
+    this.dataService.addProject(project);
+    
+    this.router.navigate(['/add-edit-summary/' + project.id]);
   }
 }
