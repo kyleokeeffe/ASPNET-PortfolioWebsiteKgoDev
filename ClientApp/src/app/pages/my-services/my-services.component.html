@@ -1,145 +1,62 @@
-<!--<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-                aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-    </div>
-    <h3>Services I offer:</h3>
-
-
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect class="carousel-rect" width="100%" height="100%" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption text-start">
-                    <h1>Web Development</h1>
-                    <p class="opacity-75">
-                        Web app and site creation and design
-                    </p>
-                    <p><a (click)="ShowWebDev()" class="btn btn-lg btn-primary">View Details</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect class="carousel-rect" width="100%" height="100%" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Standalone Software</h1>
-                    <p>Standalone software development from inception to production using a range of frameworks</p>
-                    <p><a (click)="ShowStandProg()" class="btn btn-lg btn-primary">View Details</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect class="carousel-rect" width="100%" height="100%" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <h1>Database Administration</h1>
-                    <p>Database client and server management services</p>
-                    <p><a (click)="ShowDbAdmin()" class="btn btn-lg btn-primary">View Details</a></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <rect class="carousel-rect" width="100%" height="100%" />
-            </svg>
-            <div class="container">
-                <div class="carousel-caption text-end">
-                    <h1>Service Hosting</h1>
-                    <p>Website hosting management using a range of hosting services.</p>
-                    <p><a (click)="ShowResHost()" class="btn btn-lg btn-primary">View Details</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>-->
-<!--<div class="card-deck w-100 d-flex flex-sm-column flex-lg-row p-2 flex-wrap align-content-around justify-content-center">-->
 <div class="page-container">
 
-<div class="card-deck">
-    <div class="d-flex flex-column">
-        <div class="card" (click)="ShowWebDev()">
-            <div class="card-body text-start">
-                <h4 class="card-title">Web Development</h4>
-                <p class="card-text"></p>
-            </div>
-            <div *ngIf="webDevDiv" class="serviceDiv">
-                <h3> Web Development Services</h3>
-                <div class="d-flex subservice-container">
-                    <div class="subservice">
-                        <app-subservice [filterValue]="'WebApp'"
-                                        [title]="'Full Stack'"
-                                        [description]="'MEAN Stack, ASP.Net, EJS'">
-                        </app-subservice>
-                    </div>
-                    <div class="subservice">
-                        <app-subservice [filterValue]="'WebApp'"
-                                        [title]="'Traditional Web Dev'"
-                                        [description]="'HTML5, CSS3, JavaScript'">
-                        </app-subservice>
+    <div class="card-deck d-flex flex-column">
+        <!--<div class="d-flex flex-column">-->
+            <div class="card" (click)="ShowWebDev()">
+                <div class="card-body text-start">
+                    <h4 class="card-title">Web Development</h4>
+                    <p class="card-text"></p>
+                </div>
+                <div *ngIf="webDevDiv" class="serviceDiv">
+                    <h3> Web Development Services</h3>
+                    <div class="d-flex subservice-container">
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'WebApp'"
+                                            [title]="'Full Stack'"
+                                            [description]="'MEAN Stack, ASP.Net, EJS'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'WebApp'"
+                                            [title]="'Traditional Web Dev'"
+                                            [description]="'HTML5, CSS3, JavaScript'">
+                            </app-subservice>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card" (click)="ShowStandProg()">
-            <div class="card-body text-start">
-                <h4 class="card-title">Standalone Software</h4>
-                <!--<p><a class="btn btn-lg btn-primary">View Details</a></p>-->
-            </div>
-            <div *ngIf="standProgDiv" class="serviceDiv">
-                <h3> StandAlone Software</h3>
-                <div class="d-flex subservice-container ">
-                    <div class="subservice">
-                        <app-subservice [filterValue]="'CSharp'"
-                                        [title]="'C#'"
-                                        [description]="'WPF, DB integration, EF core, ML.NET'">
-                        </app-subservice>
-                    </div>
-                    <div class="subservice">
-                        <app-subservice [filterValue]="'Java'"
-                                        [title]="'Java'"
-                                        [description]="'JFrame gui'">
-                        </app-subservice>
-                    </div>
-                    <div class="subservice">
-                        <app-subservice [filterValue]="'Python'"
-                                        [title]="'Python'"
-                                        [description]="'IOT development, machine learning models, natural language processing'">
-                        </app-subservice>
+            <div class="card" (click)="ShowStandProg()">
+                <div class="card-body text-start">
+                    <h4 class="card-title">Standalone Software</h4>
+                </div>
+                <div *ngIf="standProgDiv" class="serviceDiv">
+                    <h3> StandAlone Software</h3>
+                    <div class="d-flex subservice-container ">
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'CSharp'"
+                                            [title]="'C#'"
+                                            [description]="'WPF, DB integration, EF core, ML.NET'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'Java'"
+                                            [title]="'Java'"
+                                            [description]="'JFrame gui'">
+                            </app-subservice>
+                        </div>
+                        <div class="subservice">
+                            <app-subservice [filterValue]="'Python'"
+                                            [title]="'Python'"
+                                            [description]="'IOT development, machine learning models, natural language processing'">
+                            </app-subservice>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--<div class="row">-->
             <div class="card" (click)="ShowDbAdmin()">
                 <div class="card-body text-start">
                     <h4 class="card-title">Database Administration</h4>
-                    <!--<p><a class="btn-sm">View Details</a></p>-->
                 </div>
                 <div *ngIf="dbAdminDiv" class="serviceDiv">
                     <h3>Database Administration</h3>
@@ -168,7 +85,6 @@
             <div class="card" (click)="ShowResHost()">
                 <div class="card-body text-start">
                     <h4 class="card-title">Resource Hosting</h4>
-                    <!--<p><a class="btn-sm">View Details</a></p>-->
                 </div>
                 <div *ngIf="resHostDiv" class="serviceDiv">
                     <h3>Website Hosting Services</h3>
@@ -186,10 +102,9 @@
                             </app-subservice>
                         </div>
                     </div>
-                <!--</div>-->
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+<!--        </div>
+-->    </div>
 </div>
 

@@ -9,9 +9,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!--Collapse nav section-->
                 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
-                        <!--<h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>-->
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
@@ -19,18 +19,18 @@
                             <li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+                                <a class="nav-link active" aria-current="page" [routerLink]="['/home']" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">About</a>
+                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">Projects</a>
+                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">Services</a>
+                                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar">Services</a>
                             </li>
-                        
+
                         </ul>
                     </div>
                 </div>
@@ -47,16 +47,16 @@
                     <li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/home']" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">About</a>
+                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">Projects</a>
+                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">Services</a>
+                        <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent">Services</a>
                     </li>
 
                 </ul>
@@ -76,8 +76,7 @@
 
 
 <!--
-
-<header [ngClass]="[navStyle]">
+    Custom hamburger icon:
 
     <svg class="hamburgerRight" *ngIf="!isExpanded"
          (click)="toggle()"
@@ -120,57 +119,4 @@
               style=" fill:grey; stroke:black; stroke-width:2; opacity:1" />
 
     </svg>
-
-    <div id="hamburgerNav">
-
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <a id="homeLink" class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
-                    Home
-                </a>
-                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
-                    About
-                </a>
-                <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
-                    Projects
-                </a>
-                <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
-                    Services
-                </a>
-            </div>
-        </div>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-
-    </div>
-    <nav id="fullNav" class="nav navbar-nav bg-dark " *ngIf="isExpanded">
-
-        <div id="navLogo">
-            <img src="../assets/images/logo2.png" />
-        </div>
-        <div id="navLinks">
-            <a class="nav-link fw-bold py-1 px-0 " [routerLink]="['/home']">
-                Home
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/about']">
-                About
-            </a>
-            <a id="projLink" class="nav-link fw-bold py-1 px-0" [routerLink]="['/projects']">
-                Projects
-            </a>
-            <a class="nav-link fw-bold py-1 px-0" [routerLink]="['/my-services']">
-                Services
-            </a>
-        </div>
-
-    </nav>
-
-
-
-</header>
--->
+    -->

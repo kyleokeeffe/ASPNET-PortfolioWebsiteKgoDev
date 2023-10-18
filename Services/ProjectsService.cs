@@ -1,4 +1,5 @@
 ﻿using KgoDevBackend.Models;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson.IO;
 using MongoDB.Driver;
@@ -34,10 +35,16 @@ namespace KgoDevBackend.Services
             await _projectsCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
         //public async Task<Project?> GetAsync(string filterType, string filterLang) {
-        //   var query = from project in _projectsCollection 
+           
+
+        //    var query = await from project 
+        //               in _projectsCollection.AsQueryable<Project>()
+        //               where project.Type == filterType
+        //               select project).ToList();
+       
         //    }
             
-        //    await _projectsCollection.
+          
 
         public async Task CreateAsync(Project newProject) =>
             await _projectsCollection.InsertOneAsync(newProject);
